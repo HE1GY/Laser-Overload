@@ -1,28 +1,27 @@
+
 public struct GridData
 {
-    /*public int[] AllRow;
-    public int[] AllColumn;*/
-    public ElementType[] PartTypes;
-    /*public bool[] isActive;*/
-    public int[] _startRoataions;
+    public ElementType[] ElementTypes;
+    public int[] StartRotations;
     
-    public void ExtractPartsData(GridHolder[] parts)
+    public void ExtractHoldersData(GridHolder[] gridHolders)
     {
-        /*AllRow = new int[parts.Length];
-        AllColumn = new int[parts.Length];*/
-        PartTypes = new ElementType[parts.Length];
-        /*isActive = new bool[parts.Length];*/
-        _startRoataions = new int[parts.Length];
+        ElementTypes = new ElementType[gridHolders.Length];
+        StartRotations = new int[gridHolders.Length];
 
-        for (int i = 0; i < parts.Length; i++)
+        for (int i = 0; i < gridHolders.Length; i++)
         {
-            /*AllRow[i] = parts[i].Row;
-            AllColumn[i]=parts[i].Column;*/
-            PartTypes[i]=parts[i].elementType;
-            /*isActive[i] = parts[i].Active;*/
-            _startRoataions[i] = parts[i].SatartRotation;
+            ElementTypes[i]=gridHolders[i].SelectedElementType;
+            StartRotations[i] = gridHolders[i].StartRotation;
         }
     }
-    
-    
+
+    public void InputHoldersData(GridHolder[] gridHolders)
+    {
+        for (int i = 0; i < gridHolders.Length; i++)
+        {
+            gridHolders[i].SelectedElementType = ElementTypes[i];
+            gridHolders[i].StartRotation =(int)StartRotations[i];
+        }
+    }
 }
