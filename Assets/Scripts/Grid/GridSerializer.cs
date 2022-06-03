@@ -13,21 +13,15 @@ public class GridSerializer : MonoBehaviour
     
     public void Save()
     {
-        print("Save");//
-        
         using (StreamWriter streamWriter=new StreamWriter(Path.Combine(LevelsPath,_saveFile.name+ExtensionJson)))
         {
             string json = JsonUtility.ToJson(_gridField.GetData());
-            print(json);//
             streamWriter.Write(json);
         }
     }
 
     public void Load()
     {
-        print("Load");//
-        print(_saveFile.text);//
-        
         AssetDatabase.Refresh();
         GridData gridData = JsonUtility.FromJson<GridData>(_saveFile.text);
         _gridField.SetData(gridData);
