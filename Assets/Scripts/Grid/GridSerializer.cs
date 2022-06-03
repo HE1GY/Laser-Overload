@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -10,12 +11,24 @@ public class GridSerializer : MonoBehaviour
     
     [SerializeField] private TextAsset _saveFile;
     [SerializeField]private GridField _gridField;
-    
+
+    private void Start()
+    {
+        Load();
+    }
+
+    private void OnDisable()
+    {
+        Save();
+    }
+
     public void Save()
     {
         using (StreamWriter streamWriter=new StreamWriter(Path.Combine(LevelsPath,_saveFile.name+ExtensionJson)))
         {
             string json = JsonUtility.ToJson(_gridField.GetData());
+            print("Save");//
+            print(json);
             streamWriter.Write(json);
         }
     }
@@ -24,6 +37,8 @@ public class GridSerializer : MonoBehaviour
     {
         AssetDatabase.Refresh();
         GridData gridData = JsonUtility.FromJson<GridData>(_saveFile.text);
+        print("Load");//
+        print(_saveFile.text);//
         _gridField.SetData(gridData);
     }
     

@@ -1,15 +1,16 @@
 using System;
-using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [Serializable]
-public class GridHolder:MonoBehaviour
+public class GridHolder:MonoBehaviour,IPointerDownHandler
 {
-    [SerializeField] private ElementType _selectedElementType;
-    [SerializeField][Range(0,360)] private int _startRotation;
     [SerializeField] private Element[] _elements;
+    [SerializeField] private ElementType _selectedElementType;
 
     private Element _currentElement;
+    private ElementType _currentElementType;
     public ElementType SelectedElementType
     {
         get => _selectedElementType;
@@ -34,7 +35,6 @@ public class GridHolder:MonoBehaviour
 
     private void OnValidate()
     {
-        StartRotation = _startRotation;
         OnElementTypeChange();
     }
 
@@ -48,21 +48,38 @@ public class GridHolder:MonoBehaviour
     }
     private void OnElementTypeChange()
     {
-        if (_selectedElementType != _currentElement?.ElementType)
+        if (_currentElementType != _selectedElementType)
         {
-            _currentElement?.Deactivate();
-            foreach (Element element in _elements)
+            if (_currentElement)
+            {
+                _currentElement.Deactivate();
+            }
+            foreach (var element in _elements)
             {
                 if (element.ElementType == _selectedElementType)
                 {
+                    _currentElementType = _selectedElementType;
                     _currentElement = element;
-                    element.Activate();
-                }
-                else if (_selectedElementType==ElementType.Empty)
-                {
-                    _currentElement = null;
+                    _currentElement.Activate();
+                    return;
                 }
             }
+            _currentElement = null;
+            _currentElementType = ElementType.Empty;
+            _selectedElementType = ElementType.Empty;
+        }
+        
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (Input.GetMouseButton(0))
+        {
+            Selection.activeObject = gameObject;
+        }
+        else
+        {
+            SelectedElementType = ElementType.Empty;
         }
     }
 }

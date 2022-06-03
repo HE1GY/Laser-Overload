@@ -1,6 +1,4 @@
 using System;
-
-[Serializable]
 public enum ElementType
 {
     Empty,

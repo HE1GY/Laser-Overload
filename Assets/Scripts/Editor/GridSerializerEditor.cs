@@ -1,4 +1,5 @@
 ﻿using UnityEditor;
+using UnityEngine;
 
 
 namespace Editor
@@ -9,7 +10,20 @@ namespace Editor
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();
-            FieldEditor.RunForGridSerializerEditor((GridSerializer)target);
+            GUILayout.BeginHorizontal();
+            GridSerializer gridSerializer = (GridSerializer) target;
+            GUI.backgroundColor = Color.green;
+            if (GUILayout.Button("Save Grid",GUILayout.Height(50)))
+            {
+                gridSerializer.Save();
+            }
+            
+            GUI.backgroundColor = Color.blue; 
+            if(GUILayout.Button("Load Grid",GUILayout.Height(50)))
+            {
+                gridSerializer.Load();
+            }
+            GUILayout.EndHorizontal();
         }
     }
 }
