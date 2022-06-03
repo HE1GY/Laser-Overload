@@ -24,4 +24,10 @@ public struct GridData
             gridHolders[i].StartRotation =(int)StartRotations[i];
         }
     }
+    public void ResetHoldersData(GridHolder[] gridHolders)
+    {
+        ElementTypes = new ElementType[gridHolders.Length];
+        StartRotations = new int[gridHolders.Length];
+        InputHoldersData(gridHolders);
+    }
 }

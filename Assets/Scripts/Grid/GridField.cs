@@ -16,4 +16,9 @@ public class GridField : MonoBehaviour
         _gridData = gridData;
         _gridData.InputHoldersData(_gridHolders);
     }
+
+    public void Clean()
+    {
+        _gridData.ResetHoldersData(_gridHolders);
+    }
 }

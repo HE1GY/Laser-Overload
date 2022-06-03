@@ -1,5 +1,5 @@
-using System;
 using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 [RequireComponent(typeof(GridField))]
@@ -9,12 +9,12 @@ public class GridSerializer : MonoBehaviour
     private const string ExtensionJson = ".json";
     
     [SerializeField] private TextAsset _saveFile;
+    [SerializeField]private GridField _gridField;
     
-     [SerializeField]private GridField _gridField;
-     
     public void Save()
     {
         print("Save");//
+        
         using (StreamWriter streamWriter=new StreamWriter(Path.Combine(LevelsPath,_saveFile.name+ExtensionJson)))
         {
             string json = JsonUtility.ToJson(_gridField.GetData());
@@ -27,9 +27,10 @@ public class GridSerializer : MonoBehaviour
     {
         print("Load");//
         print(_saveFile.text);//
+        
+        AssetDatabase.Refresh();
         GridData gridData = JsonUtility.FromJson<GridData>(_saveFile.text);
         _gridField.SetData(gridData);
-        
     }
     
 }

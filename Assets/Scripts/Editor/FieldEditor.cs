@@ -1,17 +1,24 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-
 namespace Editor
 {
-    [CustomEditor((typeof(GridSerializer)))]
-    public class SaveLoadGrid:UnityEditor.Editor
+    [CustomEditor(typeof(GridField))]
+    public class FieldEditor:UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();
-            
-            GridSerializer gridSerializer = (GridSerializer) target;
+            GridField gridField = (GridField) target;
+            if (GUILayout.Button("Clean Field"))
+            {
+                gridField.Clean();
+            }
+        }
+
+
+        public static void RunForGridSerializerEditor(GridSerializer gridSerializer)
+        {
             if (GUILayout.Button("Save Grid"))
             {
                 gridSerializer.Save();
@@ -21,5 +28,6 @@ namespace Editor
                 gridSerializer.Load();
             }
         }
+        
     }
 }

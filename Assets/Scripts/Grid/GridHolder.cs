@@ -6,6 +6,7 @@ using UnityEngine;
 public class GridHolder:MonoBehaviour
 {
     [SerializeField] private ElementType _selectedElementType;
+    [SerializeField][Range(0,360)] private int _startRotation;
     [SerializeField] private Element[] _elements;
 
     private Element _currentElement;
@@ -18,7 +19,6 @@ public class GridHolder:MonoBehaviour
             OnElementTypeChange();
         }
     }
-
     public int StartRotation
     {
         get => GetTrackedRotate();
@@ -34,6 +34,7 @@ public class GridHolder:MonoBehaviour
 
     private void OnValidate()
     {
+        StartRotation = _startRotation;
         OnElementTypeChange();
     }
 
