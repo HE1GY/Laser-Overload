@@ -12,15 +12,14 @@ public class GridSerializer : MonoBehaviour
     [SerializeField] private TextAsset _saveFile;
     [SerializeField]private GridField _gridField;
 
-    private void Start()
+    /*private void Start()
     {
         Load();
     }
-
-    private void OnDisable()
+    private void OnDisable() // auto save/load
     {
         Save();
-    }
+    }*/
 
     public void Save()
     {
@@ -28,7 +27,6 @@ public class GridSerializer : MonoBehaviour
         {
             string json = JsonUtility.ToJson(_gridField.GetData());
             print("Save");//
-            print(json);
             streamWriter.Write(json);
         }
     }
@@ -38,7 +36,6 @@ public class GridSerializer : MonoBehaviour
         AssetDatabase.Refresh();
         GridData gridData = JsonUtility.FromJson<GridData>(_saveFile.text);
         print("Load");//
-        print(_saveFile.text);//
         _gridField.SetData(gridData);
     }
     
