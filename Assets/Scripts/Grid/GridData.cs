@@ -1,33 +1,31 @@
 
 public struct GridData
 {
+    public int Rows;
+    public int Columns;
+    
     public ElementType[] ElementTypes;
     public int[] StartRotations;
     
-    public void ExtractHoldersData(GridHolder[] gridHolders)
+    public void ExtractElementsData(Element[] elements)
     {
-        ElementTypes = new ElementType[gridHolders.Length];
-        StartRotations = new int[gridHolders.Length];
+        ElementTypes = new ElementType[elements.Length];
+        StartRotations = new int[elements.Length];
 
-        for (int i = 0; i < gridHolders.Length; i++)
+        for (int i = 0; i < elements.Length; i++)
         {
-            ElementTypes[i]=gridHolders[i].SelectedElementType;
-            StartRotations[i] = gridHolders[i].StartRotation;
+            ElementTypes[i]=elements[i].ElementType;
+            StartRotations[i] = elements[i].StartRotation;
         }
     }
 
-    public void InputHoldersData(GridHolder[] gridHolders)
+    public void InputElementsData(Element[] elements)
     {
-        for (int i = 0; i < gridHolders.Length; i++)
+        for (int i = 0; i < elements.Length; i++)
         {
-            gridHolders[i].SelectedElementType = ElementTypes[i];
-            gridHolders[i].StartRotation =(int)StartRotations[i];
+            elements[i].ElementType = ElementTypes[i];
+            elements[i].StartRotation =(int)StartRotations[i];
         }
     }
-    public void ResetHoldersData(GridHolder[] gridHolders)
-    {
-        ElementTypes = new ElementType[gridHolders.Length];
-        StartRotations = new int[gridHolders.Length];
-        InputHoldersData(gridHolders);
-    }
+  
 }

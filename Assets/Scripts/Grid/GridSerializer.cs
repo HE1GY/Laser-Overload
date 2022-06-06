@@ -11,15 +11,7 @@ public class GridSerializer : MonoBehaviour
     
     [SerializeField] private TextAsset _saveFile;
     [SerializeField]private GridField _gridField;
-
-    /*private void Start()
-    {
-        Load();
-    }
-    private void OnDisable() // auto save/load
-    {
-        Save();
-    }*/
+    
 
     public void Save()
     {
