@@ -4,10 +4,10 @@ namespace Grid
 {
    public class GridBuilderForGame : GridBuilder
     {
-         private const string LaserName=" ";//TODO name
-         private const string PlatformName=" ";
-         private const string BatteryName=" ";
-         private const string EmptyName=" ";
+         private const string LaserName="Laser";
+         private const string PlatformName="Platform";
+         private const string BatteryName="Battery";
+         private const string EmptyName="Empty";
          
          private  Laser _laser;
          private  Platform _platform;
@@ -26,16 +26,16 @@ namespace Grid
                 switch (gridData.ElementTypes[i])
                 {
                     case ElementType.Laser:
-                        gridElements[i] = Instantiate(_laser, Vector3.zero, Quaternion.Euler(0,0,gridData.StartRotations[i]));
+                        gridElements[i] = Instantiate(_laser, Vector2.zero, Quaternion.Euler(0,0,gridData.StartRotations[i]),transform);
                         break;
                     case ElementType.Platform:
-                        gridElements[i] = Instantiate(_platform, Vector3.zero, Quaternion.Euler(0,0,gridData.StartRotations[i]));
+                        gridElements[i] = Instantiate(_platform, Vector2.zero, Quaternion.Euler(0,0,gridData.StartRotations[i]),transform);
                         break;
                     case ElementType.Battery:
-                        gridElements[i] = Instantiate(_battery, Vector3.zero, Quaternion.Euler(0,0,gridData.StartRotations[i]));
+                        gridElements[i] = Instantiate(_battery, Vector2.zero, Quaternion.Euler(0,0,gridData.StartRotations[i]),transform);
                         break;
                     case ElementType.Empty:
-                        gridElements[i] = Instantiate(_empty, Vector3.zero, Quaternion.Euler(0,0,gridData.StartRotations[i]));
+                        gridElements[i] = Instantiate(_empty, Vector2.zero, Quaternion.Euler(0,0,gridData.StartRotations[i]),transform);
                         break;
                 }
             }

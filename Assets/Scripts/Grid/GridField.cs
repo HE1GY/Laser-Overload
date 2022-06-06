@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class GridField : MonoBehaviour
 {
-    /*[SerializeField] private GridHolder[] _gridHolders;*/
-
-   [SerializeField]private GridLayoutGroup _gridLayout;
+    [SerializeField]private GridLayoutGroup _gridLayout;
+    
     private GridData _gridData;
     private GridBuilder _gridBuilder;
     private Element[] _gridElements;
@@ -34,9 +33,13 @@ public class GridField : MonoBehaviour
     {
         DeleteAllElement();
         _gridElements=_gridBuilder.BuildGrid(ref _gridData);
+        GridLayoutConficuration();
+    }
+
+    private void GridLayoutConficuration()
+    {
         _gridLayout.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
         _gridLayout.constraintCount = _gridData.Columns;
-
     }
 
     private void DeleteAllElement()
