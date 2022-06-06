@@ -1,14 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Grid.Elements
 {
+    [RequireComponent(typeof(LaserReceiver))]
     public class LaserEnergyProvider:MonoBehaviour
     {
-        [SerializeField] private LaserReceiver _laserReceiver;
         [SerializeField] private Collider2D _receiverPort;
-        
         [SerializeField] private LaserThrower _laserThrower;
         
+        private LaserReceiver _laserReceiver;
+
+        private void Awake()
+        {
+            _laserReceiver = GetComponent<LaserReceiver>();
+        }
+
         private void OnEnable()
         {
             _laserReceiver.Connected += OnConnected;
@@ -35,6 +42,7 @@ namespace Grid.Elements
             if (_receiverPort.Equals(collider2D))
             {
                 _laserThrower.IsThrowingLaser = false;
+                _laserThrower.StopThrowing();
             }
         }
     }

@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Grid.Elements
 {
@@ -47,12 +46,22 @@ namespace Grid.Elements
                     }
                 }
             }
-            else if(_connectedConsumer)
+            else
+            {
+                StopThrowing();
+            }
+        }
+
+
+        public void StopThrowing()
+        {
+            if(_connectedConsumer)
             {
                 _connectedConsumer.Disconnect(_connectedPort);
                 _connectedConsumer = null;
             }
         }
+        
 
 
         private void HandleLaserVisualization()
