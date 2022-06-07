@@ -6,12 +6,16 @@ namespace Grid.Elements
     {
         [SerializeField] private Transform _shootPoints;
         [SerializeField]private bool _isThrowingLaser;//
-        [SerializeField] private LineRenderer _LineRenderer;
-        
+
         public bool IsThrowingLaser
         {
+            get => _isThrowingLaser;
             set => _isThrowingLaser=value;
         }
+
+        public Transform ShootPoint => _shootPoints;
+        public RaycastHit2D HitInfo=>_raycastHit2D;
+        
         
         private LaserReceiver _connectedConsumer;
         private Collider2D _connectedPort;
@@ -23,7 +27,6 @@ namespace Grid.Elements
             if (_isThrowingLaser)
             {
                 ThrowLaser();
-                /*HandleLaserVisualization();*/
             }
         }
         
@@ -60,14 +63,8 @@ namespace Grid.Elements
                 _connectedConsumer.Disconnect(_connectedPort);
                 _connectedConsumer = null;
             }
+            _isThrowingLaser = IsThrowingLaser;
         }
         
-
-
-        private void HandleLaserVisualization()
-        {
-            Vector3[] positions = new Vector3[] {_shootPoints.position,_raycastHit2D.point };
-            _LineRenderer.SetPositions(positions);
-        }
     }
 }

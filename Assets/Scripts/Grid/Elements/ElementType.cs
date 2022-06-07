@@ -4,5 +4,7 @@ public enum ElementType
     Empty,
     Laser,
     Platform,
-    Battery
+    Battery,
+    Laser3
+    
 }

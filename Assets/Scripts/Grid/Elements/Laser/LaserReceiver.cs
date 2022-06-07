@@ -5,27 +5,27 @@ namespace Grid.Elements
 {
     public class LaserReceiver:MonoBehaviour
     {
-        public event Action<Collider2D> Connected;
-        public event Action<Collider2D> LostConnection;
+        public event Action Connected;
+        public event Action LostConnection;
         
-        [SerializeField] private Collider2D[] _recieveColliders;
+        [SerializeField] private Collider2D _recieveCollider;
 
         public bool TryConnect(Collider2D collider2D)
         {
-            foreach (var collider in _recieveColliders)
+            if (_recieveCollider.Equals(collider2D))
             {
-                if (collider.Equals(collider2D))
-                {
-                    Connected?.Invoke(collider);
-                    return true;
-                }
+                Connected?.Invoke();
+                return true;
             }
             return false;
         }
 
         public void Disconnect(Collider2D collider2D)
         {
-            LostConnection?.Invoke(collider2D);
+            if (_recieveCollider.Equals(collider2D))
+            {
+                LostConnection?.Invoke();
+            }
         }
     }
 }

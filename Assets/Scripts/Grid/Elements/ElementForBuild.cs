@@ -11,6 +11,7 @@ namespace Grid
         [SerializeField] private Sprite _battery;
         [SerializeField] private Sprite _platform;
         [SerializeField] private Sprite _empty;
+        [SerializeField] private Sprite _laser3;
         [Space(10)]
         [SerializeField]private Image _image;
 
@@ -47,6 +48,9 @@ namespace Grid
                     break;
                 case ElementType.Platform:
                     _image.sprite = _platform;
+                    break;
+                case ElementType.Laser3:
+                    _image.sprite = _laser3;
                     break;
             }
         }

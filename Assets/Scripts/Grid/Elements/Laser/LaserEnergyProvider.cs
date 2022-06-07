@@ -2,19 +2,11 @@
 
 namespace Grid.Elements
 {
-    [RequireComponent(typeof(LaserReceiver))]
     public class LaserEnergyProvider:MonoBehaviour
     {
-        [SerializeField] private Collider2D _receiverPort;
+        [SerializeField] private LaserReceiver _laserReceiver;
         [SerializeField] private LaserThrower _laserThrower;
         
-        private LaserReceiver _laserReceiver;
-
-        private void Awake()
-        {
-            _laserReceiver = GetComponent<LaserReceiver>();
-        }
-
         private void OnEnable()
         {
             _laserReceiver.Connected += OnConnected;
@@ -28,21 +20,16 @@ namespace Grid.Elements
         }
         
         
-        private void OnConnected(Collider2D collider2D)
+        private  void OnConnected()
         {
-            if (_receiverPort.Equals(collider2D))
-            {
-                _laserThrower.IsThrowingLaser = true;
-            }
+            _laserThrower.IsThrowingLaser = true;
         }
 
-        private void OnDisconnect(Collider2D collider2D)
+        private  void OnDisconnect()
         {
-            if (_receiverPort.Equals(collider2D))
-            {
-                _laserThrower.IsThrowingLaser = false;
-                _laserThrower.StopThrowing();
-            }
+            _laserThrower.IsThrowingLaser = false;
+            _laserThrower.StopThrowing();
         }
     }
+
 }

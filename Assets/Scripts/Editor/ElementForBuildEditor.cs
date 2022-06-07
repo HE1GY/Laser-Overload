@@ -29,11 +29,17 @@ namespace Editor
             {
                 elementForBuild.ElementType=ElementType.Battery;
             }
+            GUI.backgroundColor=Color.cyan;
+            if(GUILayout.Button("Laser[3]",GUILayout.Height(50)))
+            {
+                elementForBuild.ElementType=ElementType.Laser3;
+            }
             GUI.backgroundColor=Color.green;
             if(GUILayout.Button("Empty",GUILayout.Height(50)))
             {
                 elementForBuild.ElementType=ElementType.Empty;
             }
+            
             
             GUILayout.Space(20);
             GUI.backgroundColor=Color.black;
