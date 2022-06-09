@@ -33,10 +33,10 @@ public class GridField : MonoBehaviour
     {
         DeleteAllElement();
         _gridElements=_gridBuilder.BuildGrid(ref _gridData);
-        GridLayoutConficuration();
+        GridLayoutConfiguration();
     }
 
-    private void GridLayoutConficuration()
+    private void GridLayoutConfiguration()
     {
         _gridLayout.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
         _gridLayout.constraintCount = _gridData.Columns;

@@ -5,12 +5,14 @@ namespace Grid.Elements
     public class LaserThrower:MonoBehaviour
     {
         [SerializeField] private Transform _shootPoints;
-        [SerializeField]private bool _isThrowingLaser;//
+        [SerializeField]private bool _isTurnOn;
 
-        public bool IsThrowingLaser
+
+        public int ReceivedEnergy { get; set; }
+        
+        public bool IsTurnOn
         {
-            get => _isThrowingLaser;
-            set => _isThrowingLaser=value;
+            get => ReceivedEnergy>0||_isTurnOn;
         }
 
         public Transform ShootPoint => _shootPoints;
@@ -24,7 +26,7 @@ namespace Grid.Elements
         
         private void Update()
         {
-            if (_isThrowingLaser)
+            if (IsTurnOn)
             {
                 ThrowLaser();
             }
@@ -33,9 +35,7 @@ namespace Grid.Elements
         private void ThrowLaser()
         {
             _raycastHit2D = Physics2D.Raycast(_shootPoints.position, _shootPoints.right);
-            
-            Debug.DrawRay(_shootPoints.position,_shootPoints.right*100,Color.red);//
-            
+
             if (_raycastHit2D && _raycastHit2D.collider.gameObject.TryGetComponent(out LaserReceiver laserReceiver))
             {
                 if (laserReceiver != _connectedConsumer)
@@ -48,23 +48,25 @@ namespace Grid.Elements
                         _connectedConsumer = laserReceiver;
                     }
                 }
+                Debug.DrawRay(_shootPoints.position,_shootPoints.right*_raycastHit2D.distance,Color.black);//
+                
             }
             else
             {
-                StopThrowing();
+                ResetConsumer();
             }
         }
 
 
-        public void StopThrowing()
+        public void ResetConsumer()
         {
             if(_connectedConsumer)
             {
                 _connectedConsumer.Disconnect(_connectedPort);
                 _connectedConsumer = null;
             }
-            _isThrowingLaser = IsThrowingLaser;
         }
+        
         
     }
 }

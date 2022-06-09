@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoints: {fileID: 1431008568886025552}
-  _isThrowingLaser: 1
+  _isTurnOn: 1
 --- !u!114 &4825186280103474967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e293116088f47488ad5e8bdcbc5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLaserLength: 2
+  _defaultLaserLength: 2.5
   _lineRenderer: {fileID: 8000482962069733341}
   _laserThrower: {fileID: 1836162708897660415}
 --- !u!1 &8000482962069733343

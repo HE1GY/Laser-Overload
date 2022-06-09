@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class LaserVisualization : MonoBehaviour
 {
-   [SerializeField] private float _defaultLaserLength;
+    private const float DefaultLaserLength= 2.5f;
    
    [SerializeField] private LineRenderer _lineRenderer;
    [SerializeField] private LaserThrower _laserThrower;
@@ -21,7 +21,7 @@ public class LaserVisualization : MonoBehaviour
 
    private void HandleLaserVisualization()
    {
-       if (_laserThrower.IsThrowingLaser)
+       if (_laserThrower.IsTurnOn)
        {
            _lineRenderer.SetPosition(0, _laserThrower.ShootPoint.position);
            if (_laserThrower.HitInfo)
@@ -31,7 +31,7 @@ public class LaserVisualization : MonoBehaviour
            else
            {
                _lineRenderer.SetPosition(1,
-                   (_laserThrower.ShootPoint.right * _defaultLaserLength + _laserThrower.ShootPoint.position));
+                   (_laserThrower.ShootPoint.right * DefaultLaserLength + _laserThrower.ShootPoint.position));
            }
        }
        else

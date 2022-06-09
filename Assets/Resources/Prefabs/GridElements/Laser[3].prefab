@@ -33,7 +33,7 @@ Transform:
   - {fileID: 6784259088873415101}
   - {fileID: 1685737196521852658}
   m_Father: {fileID: 708224298333419931}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &708224297580730617
 GameObject:
@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708224297580730617}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -61, z: 0}
+  m_LocalPosition: {x: -0, y: -62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -96,7 +96,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 708224298333419931}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &708224297745590196
 LineRenderer:
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoints: {fileID: 708224298314775472}
-  _isThrowingLaser: 0
+  _isTurnOn: 0
 --- !u!114 &708224297937321573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e293116088f47488ad5e8bdcbc5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLaserLength: 2
+  _defaultLaserLength: 2.5
   _lineRenderer: {fileID: 708224298289646638}
   _laserThrower: {fileID: 708224297937321570}
 --- !u!1 &708224298091016050
@@ -499,7 +499,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 708224298333419931}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &708224298289646638
 LineRenderer:
@@ -677,7 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoints: {fileID: 708224298677719696}
-  _isThrowingLaser: 0
+  _isTurnOn: 0
 --- !u!114 &708224298292434287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,7 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e293116088f47488ad5e8bdcbc5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLaserLength: 2
+  _defaultLaserLength: 2.5
   _lineRenderer: {fileID: 708224298363392053}
   _laserThrower: {fileID: 708224298292434284}
 --- !u!1 &708224298314775487
@@ -752,10 +752,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4224006018649270063}
   - {fileID: 708224298289646639}
   - {fileID: 708224298363392054}
   - {fileID: 708224297745590197}
+  - {fileID: 4224006018649270063}
   m_Father: {fileID: 2005779708061903175}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -789,7 +789,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 708224298333419931}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &708224298363392053
 LineRenderer:
@@ -1017,7 +1017,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708224298677719711}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 59.4, y: 0, z: 0}
+  m_LocalPosition: {x: 61.32, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1170,7 +1170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoints: {fileID: 708224297580730618}
-  _isThrowingLaser: 0
+  _isTurnOn: 0
 --- !u!114 &708224299269172496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1183,7 +1183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e293116088f47488ad5e8bdcbc5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLaserLength: 2
+  _defaultLaserLength: 2.5
   _lineRenderer: {fileID: 708224297745590196}
   _laserThrower: {fileID: 708224299269172509}
 --- !u!1 &708224299353998726

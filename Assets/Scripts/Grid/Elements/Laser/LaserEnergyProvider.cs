@@ -4,6 +4,7 @@ namespace Grid.Elements
 {
     public class LaserEnergyProvider:MonoBehaviour
     {
+        private const int ProvidedEnergy = 1;
         [SerializeField] private LaserReceiver _laserReceiver;
         [SerializeField] private LaserThrower _laserThrower;
         
@@ -22,13 +23,16 @@ namespace Grid.Elements
         
         private  void OnConnected()
         {
-            _laserThrower.IsThrowingLaser = true;
+            _laserThrower.ReceivedEnergy += ProvidedEnergy;
         }
 
         private  void OnDisconnect()
         {
-            _laserThrower.IsThrowingLaser = false;
-            _laserThrower.StopThrowing();
+            _laserThrower.ReceivedEnergy -= ProvidedEnergy;
+            if (!_laserThrower.IsTurnOn)
+            {
+                _laserThrower.ResetConsumer();
+            }
         }
     }
 
