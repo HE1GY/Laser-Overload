@@ -20,9 +20,14 @@ namespace Editor
                 elementForBuild.ElementType=ElementType.Laser;
             }
             GUI.backgroundColor=Color.blue;
-            if(GUILayout.Button("Platform",GUILayout.Height(50)))
+            if(GUILayout.Button("PlatformTriangle90",GUILayout.Height(50)))
             {
-                elementForBuild.ElementType=ElementType.Platform;
+                elementForBuild.ElementType=ElementType.PlatformTriangle90;
+            }
+            GUI.backgroundColor=Color.magenta;
+            if(GUILayout.Button("PlatformStick90",GUILayout.Height(50)))
+            {
+                elementForBuild.ElementType=ElementType.PlatformStick90;
             }
             GUI.backgroundColor=Color.red;
             if(GUILayout.Button("Battery",GUILayout.Height(50)))

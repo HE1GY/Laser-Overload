@@ -5,22 +5,23 @@ using UnityEngine.UI;
 
 namespace Grid
 {
-    public class ElementForBuild : Element,IPointerDownHandler
+    public class ElementForBuild : Element, IPointerDownHandler
     {
         [SerializeField] private Sprite _laser;
         [SerializeField] private Sprite _battery;
-        [SerializeField] private Sprite _platform;
+        [SerializeField] private Sprite _platformTriangle90;
+        [SerializeField] private Sprite _platformStick90;
         [SerializeField] private Sprite _empty;
         [SerializeField] private Sprite _laser3;
-        [Space(10)]
-        [SerializeField]private Image _image;
+
+        [Space(10)] [SerializeField] private Image _image;
 
         private const int RotationStep = 90;
         private ElementType _elementType;
 
         public override ElementType ElementType
         {
-            get=>_elementType;
+            get => _elementType;
             set
             {
                 _elementType = value;
@@ -46,24 +47,28 @@ namespace Grid
                 case ElementType.Laser:
                     _image.sprite = _laser;
                     break;
-                case ElementType.Platform:
-                    _image.sprite = _platform;
+                case ElementType.PlatformTriangle90:
+                    _image.sprite = _platformTriangle90;
                     break;
                 case ElementType.Laser3:
                     _image.sprite = _laser3;
                     break;
+                case ElementType.PlatformStick90:
+                    _image.sprite = _platformStick90;
+                    break;
             }
         }
 
-        public void OnPointerDown(PointerEventData eventData)
+        public override void OnPointerDown(PointerEventData eventData)
         {
+            base.OnPointerDown(eventData);
             if (Input.GetMouseButton(0))
             {
                 Selection.activeObject = gameObject;
             }
             else
             {
-                ElementType=ElementType.Empty;
+                ElementType = ElementType.Empty;
             }
         }
     }

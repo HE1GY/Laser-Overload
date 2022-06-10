@@ -61,7 +61,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _laser: {fileID: 21300000, guid: 4f9088bb002d0554db0406b06cc80861, type: 3}
   _battery: {fileID: 21300000, guid: c57a260d0b77cb44ebe042ba9f70beb4, type: 3}
-  _platform: {fileID: 21300000, guid: 3a874f8f61b77bf4d80115efbb36a3c4, type: 3}
+  _platformTriangle90: {fileID: 21300000, guid: 3a874f8f61b77bf4d80115efbb36a3c4, type: 3}
+  _platformStick90: {fileID: 21300000, guid: 4180bcddb49ac5a40929e1548fd794b6, type: 3}
   _empty: {fileID: 21300000, guid: 7d0e7f13c1049204bae225b3d0592770, type: 3}
   _laser3: {fileID: 21300000, guid: 49477d019fc70b6469eac0da07697858, type: 3}
   _image: {fileID: 767089104183415617}

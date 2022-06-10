@@ -1,6 +1,8 @@
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public abstract class Element:MonoBehaviour
+public abstract class Element:MonoBehaviour,IPointerDownHandler
 {
     public abstract ElementType ElementType { set; get; }
     public  int StartRotation 
@@ -13,14 +15,8 @@ public abstract class Element:MonoBehaviour
         }
     }
     
-    
-    public virtual void Activate()
+    public virtual void OnPointerDown(PointerEventData eventData)
     {
-        gameObject.SetActive(true);
-    }
-
-    public virtual void Deactivate()
-    {
-        gameObject.SetActive(false);
+        StartRotation -= 90;
     }
 }

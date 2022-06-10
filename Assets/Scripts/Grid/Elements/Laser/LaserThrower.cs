@@ -8,7 +8,7 @@ namespace Grid.Elements
         [SerializeField]private bool _isTurnOn;
 
 
-        public int ReceivedEnergy { get; set; }
+        public int ReceivedEnergy { get; set; } 
         
         public bool IsTurnOn
         {

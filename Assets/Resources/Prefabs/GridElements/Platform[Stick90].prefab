@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770952537555839802}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -6.58, y: -3.97, z: 0}
+  m_LocalPosition: {x: -4.07, y: 0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776503517515871828}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.41, y: -0.87, z: 0}
+  m_LocalPosition: {x: -0.2, y: -0.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6098811280926770740}
   - component: {fileID: 6814009543543931252}
-  - component: {fileID: 95525098662420534}
+  - component: {fileID: 8561407506153010144}
   m_Layer: 0
   m_Name: Receiver (1)
   m_TagString: Untagged
@@ -90,7 +90,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102906774642403198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.16, y: -2.38, z: 0}
+  m_LocalPosition: {x: 1.77, y: -1.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4409c982096c4006b8a8b29a876e9ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _recieveCollider: {fileID: 95525098662420534}
---- !u!68 &95525098662420534
+  _recieveCollider: {fileID: 8561407506153010144}
+--- !u!68 &8561407506153010144
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,8 +126,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.13694918, y: 5.2482767}
-  - {x: -0.18371606, y: -0.43773317}
+  - {x: 0.2677002, y: 1.6861877}
+  - {x: 0.26690674, y: -0.7814026}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666cc93ae10e4620819083ddab44b405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _laserReceiver: {fileID: 7401745862536090322}
+  _laserReceiver: {fileID: 3099934033052601262}
   _laserThrower: {fileID: 6914061325926042651}
 --- !u!114 &6914061325926042651
 MonoBehaviour:
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoints: {fileID: 4321013689747700402}
-  _isThrowingLaser: 0
+  _isTurnOn: 0
 --- !u!114 &7399234322674636854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e293116088f47488ad5e8bdcbc5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLaserLength: 2
   _lineRenderer: {fileID: 1783533166290011982}
   _laserThrower: {fileID: 6914061325926042651}
 --- !u!1 &3381482780114806849
@@ -421,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666cc93ae10e4620819083ddab44b405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _laserReceiver: {fileID: 7401745862693294859}
+  _laserReceiver: {fileID: 6814009543543931252}
   _laserThrower: {fileID: 4234195094051265367}
 --- !u!114 &4234195094051265367
 MonoBehaviour:
@@ -436,7 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoints: {fileID: 391414156185493062}
-  _isThrowingLaser: 0
+  _isTurnOn: 0
 --- !u!114 &2888160032281248332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,7 +448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e293116088f47488ad5e8bdcbc5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLaserLength: 2
   _lineRenderer: {fileID: 6638024284785323734}
   _laserThrower: {fileID: 4234195094051265367}
 --- !u!1 &5436199667661628365
@@ -476,7 +474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5436199667661628365}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -6.46, y: -4.05, z: 0}
+  m_LocalPosition: {x: -0.06, y: -2.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -493,7 +491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8735199155716410501}
   - component: {fileID: 3099934033052601262}
-  - component: {fileID: 3129208778947370718}
+  - component: {fileID: 943066643025339604}
   m_Layer: 0
   m_Name: Receiver
   m_TagString: Untagged
@@ -509,7 +507,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6301045715245141825}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.34, y: 2.9, z: 0}
+  m_LocalPosition: {x: -2.32, y: 0.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -528,8 +526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4409c982096c4006b8a8b29a876e9ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _recieveCollider: {fileID: 3129208778947370718}
---- !u!68 &3129208778947370718
+  _recieveCollider: {fileID: 943066643025339604}
+--- !u!68 &943066643025339604
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -545,8 +543,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 7.1437006, y: 0.09531063}
-  - {x: -0.35046172, y: 0.013697147}
+  - {x: 0.461792, y: -0.24810791}
+  - {x: 4.137512, y: -0.28601074}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -744,7 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoints: {fileID: 7401745861522789566}
-  _isThrowingLaser: 0
+  _isTurnOn: 0
 --- !u!114 &7401745861153316125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,7 +755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e293116088f47488ad5e8bdcbc5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLaserLength: 2
   _lineRenderer: {fileID: 7401745861295940887}
   _laserThrower: {fileID: 7401745861153316123}
 --- !u!1 &7401745861295940885
@@ -915,7 +912,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7401745861522789565}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 5.23, y: 4.78, z: 0}
+  m_LocalPosition: {x: 0.09, y: 2.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -964,7 +961,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2780750643604717429}
-  - component: {fileID: 5726751897016159942}
+  - component: {fileID: 1357523672024718843}
+  - component: {fileID: 6358699462634984282}
   m_Layer: 0
   m_Name: Platform[Stick90]
   m_TagString: Untagged
@@ -997,7 +995,7 @@ RectTransform:
   m_AnchoredPosition: {x: 59, y: -226}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5726751897016159942
+--- !u!114 &1357523672024718843
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1006,9 +1004,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 7401745861766975933}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ece6ea531bd4a308414e3dbe2e5c83d, type: 3}
+  m_Script: {fileID: 11500000, guid: 092eb12d30114e51bcfc14a6695a1471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!68 &6358699462634984282
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7401745861766975933}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 12.628845, y: -5.4585266}
+  - {x: 38.838623, y: -32.02368}
+  - {x: 32.578552, y: -38.60666}
+  - {x: 7.524109, y: -14.221313}
+  - {x: 5.31958, y: -3.6454163}
+  - {x: -2.8359375, y: 1.8695984}
+  - {x: -10.808716, y: 4.204773}
+  - {x: -38.53595, y: 31.439697}
+  - {x: -31.850342, y: 38.110962}
+  - {x: -6.1901245, y: 13.739899}
+  - {x: -2.86438, y: 2.272705}
+  - {x: 4.6395874, y: -3.0722961}
+  - {x: 12.418274, y: -5.3964233}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &7401745861959942548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,7 +1086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7401745862536090324}
   - component: {fileID: 7401745862536090322}
-  - component: {fileID: 7070033237547619885}
+  - component: {fileID: 5645233556960838803}
   m_Layer: 0
   m_Name: Receiver
   m_TagString: Untagged
@@ -1071,7 +1102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7401745862536090321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.47, y: 2.91, z: 0}
+  m_LocalPosition: {x: -2.16, y: -1.1499976, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1090,8 +1121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4409c982096c4006b8a8b29a876e9ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _recieveCollider: {fileID: 7070033237547619885}
---- !u!68 &7070033237547619885
+  _recieveCollider: {fileID: 5645233556960838803}
+--- !u!68 &5645233556960838803
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1107,8 +1138,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 5.976037, y: -0.021449625}
-  - {x: -0.35046172, y: 0.013697147}
+  - {x: -0.5, y: 0}
+  - {x: 2.8503418, y: -0.01373291}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -1123,7 +1154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7401745862693294861}
   - component: {fileID: 7401745862693294859}
-  - component: {fileID: 6839177541023033291}
+  - component: {fileID: 2348831144768370413}
   m_Layer: 0
   m_Name: Receiver (1)
   m_TagString: Untagged
@@ -1139,7 +1170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7401745862693294858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.06, y: -1.44, z: 0}
+  m_LocalPosition: {x: 1.92, y: -4.6699853, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1158,8 +1189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4409c982096c4006b8a8b29a876e9ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _recieveCollider: {fileID: 6839177541023033291}
---- !u!68 &6839177541023033291
+  _recieveCollider: {fileID: 2348831144768370413}
+--- !u!68 &2348831144768370413
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1175,8 +1206,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.020188928, y: 5.365037}
-  - {x: -0.18371606, y: -0.43773317}
+  - {x: -0.23950195, y: 3.720581}
+  - {x: -0.24023438, y: 0.93182373}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -1243,7 +1274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoints: {fileID: 7401745862995250418}
-  _isThrowingLaser: 0
+  _isTurnOn: 0
 --- !u!114 &7401745862898403843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1256,7 +1287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e293116088f47488ad5e8bdcbc5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLaserLength: 2
   _lineRenderer: {fileID: 7401745863143000059}
   _laserThrower: {fileID: 7401745862898403841}
 --- !u!1 &7401745862995250417
@@ -1283,7 +1313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7401745862995250417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.01, y: 4.46, z: 0}
+  m_LocalPosition: {x: 3.94, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1314,7 +1344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7401745863048111400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 1.18, z: 0}
+  m_LocalPosition: {x: 0.31, y: 2.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1481,7 +1511,7 @@ RectTransform:
   m_GameObject: {fileID: 7459606563665693300}
   m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.15, z: 1}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7401745861959942549}

@@ -2,12 +2,9 @@
 
 namespace Grid
 {
-    public class Laser:Element,IPointerDownHandler
+    public class Laser:Element
     {
         public override ElementType ElementType { get; set; } = ElementType.Laser;
-        public void OnPointerDown(PointerEventData eventData)
-        {
-            StartRotation -= 90;
-        }
+
     }
 }

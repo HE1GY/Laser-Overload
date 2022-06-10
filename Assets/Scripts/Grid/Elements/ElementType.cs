@@ -3,7 +3,8 @@ public enum ElementType
 {
     Empty,
     Laser,
-    Platform,
+    PlatformTriangle90,
+    PlatformStick90,
     Battery,
     Laser3
     

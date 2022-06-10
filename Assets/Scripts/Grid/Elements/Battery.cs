@@ -1,6 +1,7 @@
 using System;
 using Grid.Elements;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 class Battery :Element
@@ -31,5 +32,10 @@ class Battery :Element
     private void OnDisconnect()
     {
         _testMark.enabled = false;
+    }
+
+    public override void OnPointerDown(PointerEventData eventData)
+    {
+        //TODO 
     }
 }
