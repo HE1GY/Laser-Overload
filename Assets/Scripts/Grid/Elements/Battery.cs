@@ -10,6 +10,8 @@ class Battery :Element
     [SerializeField] private LaserReceiver _laserReceiver;
     public override ElementType ElementType { get;  set; } = ElementType.Battery;
 
+    private int Energy;
+
 
     private void OnEnable()
     {
@@ -26,12 +28,20 @@ class Battery :Element
 
     private void OnConnect()
     {
-        _testMark.enabled = true;
+        Energy += 1;
+        if (Energy > 0)
+        {
+            _testMark.enabled = true;
+        }
     }
 
     private void OnDisconnect()
     {
-        _testMark.enabled = false;
+        Energy -= 1;
+        if (Energy == 0)
+        {
+            _testMark.enabled = false;
+        }
     }
 
     public override void OnPointerDown(PointerEventData eventData)

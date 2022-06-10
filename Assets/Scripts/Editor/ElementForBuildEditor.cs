@@ -40,6 +40,16 @@ namespace Editor
                 elementForBuild.ElementType=ElementType.Laser3;
             }
             GUI.backgroundColor=Color.green;
+            if(GUILayout.Button("Block",GUILayout.Height(50)))
+            {
+                elementForBuild.ElementType=ElementType.Block;
+            }
+            GUI.backgroundColor=Color.cyan;
+            if(GUILayout.Button("Star",GUILayout.Height(50)))
+            {
+                elementForBuild.ElementType=ElementType.Star;
+            }
+            GUI.backgroundColor=Color.red;
             if(GUILayout.Button("Empty",GUILayout.Height(50)))
             {
                 elementForBuild.ElementType=ElementType.Empty;

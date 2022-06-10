@@ -65,6 +65,8 @@ MonoBehaviour:
   _platformStick90: {fileID: 21300000, guid: 4180bcddb49ac5a40929e1548fd794b6, type: 3}
   _empty: {fileID: 21300000, guid: 7d0e7f13c1049204bae225b3d0592770, type: 3}
   _laser3: {fileID: 21300000, guid: 49477d019fc70b6469eac0da07697858, type: 3}
+  _block: {fileID: 21300000, guid: 7fad2126a02e2bd4b956f9876ef1e9f2, type: 3}
+  _star: {fileID: 21300000, guid: ad1bd42ecf2f9874b81d77ca61aa818f, type: 3}
   _image: {fileID: 767089104183415617}
 --- !u!114 &767089104183415617
 MonoBehaviour:

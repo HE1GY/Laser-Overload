@@ -13,6 +13,9 @@ namespace Grid
         [SerializeField] private Sprite _platformStick90;
         [SerializeField] private Sprite _empty;
         [SerializeField] private Sprite _laser3;
+        [SerializeField] private Sprite _block;
+        [SerializeField] private Sprite _star;
+        
 
         [Space(10)] [SerializeField] private Image _image;
 
@@ -56,12 +59,17 @@ namespace Grid
                 case ElementType.PlatformStick90:
                     _image.sprite = _platformStick90;
                     break;
+                case ElementType.Block:
+                    _image.sprite = _block;
+                    break;
+                case ElementType.Star:
+                    _image.sprite = _star;
+                    break;
             }
         }
 
         public override void OnPointerDown(PointerEventData eventData)
         {
-            base.OnPointerDown(eventData);
             if (Input.GetMouseButton(0))
             {
                 Selection.activeObject = gameObject;

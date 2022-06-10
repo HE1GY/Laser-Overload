@@ -6,6 +6,7 @@ public enum ElementType
     PlatformTriangle90,
     PlatformStick90,
     Battery,
-    Laser3
-    
+    Laser3,
+    Block,
+    Star
 }

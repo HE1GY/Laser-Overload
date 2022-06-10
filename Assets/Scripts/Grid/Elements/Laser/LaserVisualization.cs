@@ -24,6 +24,26 @@ public class LaserVisualization : MonoBehaviour
 
    private void HandleLaserVisualization()
    {
+       if (_laserThrower.IsTurnOn)
+       {
+           _lineRenderer.SetPosition(0, _laserThrower.ShootPoint.position);
+           if (_laserThrower.HitInfo)
+           {
+               _lineRenderer.SetPosition(1, _laserThrower.HitInfo.point);
+           }
+           else
+           {
+               _lineRenderer.SetPosition(1,
+                   (_laserThrower.ShootPoint.right * DefaultLaserLength + _laserThrower.ShootPoint.position));
+           }
+       }
+       else
+       {
+           ResetRender();
+       }
+       
+       
+       
        /*_defaultPoint=_laserThrower.ShootPoint.right *
            DefaultLaserLength + _laserThrower.ShootPoint.position;
        if (_laserThrower.IsTurnOn && !_startedVisualization)
@@ -46,9 +66,7 @@ public class LaserVisualization : MonoBehaviour
            _startedVisualization = false;
            ResetRender();
        }*/
-       
-       
-       
+
    }
 
 
