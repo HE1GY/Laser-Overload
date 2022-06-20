@@ -182,7 +182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e293116088f47488ad5e8bdcbc5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLaserLength: 2.5
   _lineRenderer: {fileID: 8209959486533636543}
   _laserThrower: {fileID: 8209959486290291123}
 --- !u!1 &8209959486533636541
@@ -436,6 +435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ece6ea531bd4a308414e3dbe2e5c83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _LaserThrower: {fileID: 8209959488034864809}
+  _LaserThrower2: {fileID: 8209959486290291123}
 --- !u!68 &5722844324379631376
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -870,6 +871,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e293116088f47488ad5e8bdcbc5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLaserLength: 2.5
   _lineRenderer: {fileID: 8209959487775683411}
   _laserThrower: {fileID: 8209959488034864809}

@@ -1,93 +1,73 @@
-using System;
+#region
+
 using System.Collections;
-using System.Text;
 using Grid.Elements;
 using UnityEngine;
 
+#endregion
+
 public class LaserVisualization : MonoBehaviour
 {
-    private const float DefaultLaserLength= 2.5f;
-   
-   [SerializeField] private LineRenderer _lineRenderer;
-   [SerializeField] private LaserThrower _laserThrower;
-   
+    private const float _speed = 0.007f;
 
-   private bool _startedVisualization;
-   private Vector3 _defaultPoint;
-   private bool _hasAim;
-   
+    [SerializeField] private LineRenderer _lineRenderer;
+    [SerializeField] private LaserThrower _laserThrower;
 
-   private void Update()
-   {
-       HandleLaserVisualization();
-   }
-
-   private void HandleLaserVisualization()
-   {
-       if (_laserThrower.IsTurnOn)
-       {
-           _lineRenderer.SetPosition(0, _laserThrower.ShootPoint.position);
-           if (_laserThrower.HitInfo)
-           {
-               _lineRenderer.SetPosition(1, _laserThrower.HitInfo.point);
-           }
-           else
-           {
-               _lineRenderer.SetPosition(1,
-                   (_laserThrower.ShootPoint.right * DefaultLaserLength + _laserThrower.ShootPoint.position));
-           }
-       }
-       else
-       {
-           ResetRender();
-       }
-       
-       
-       
-       /*_defaultPoint=_laserThrower.ShootPoint.right *
-           DefaultLaserLength + _laserThrower.ShootPoint.position;
-       if (_laserThrower.IsTurnOn && !_startedVisualization)
-       {
-           _hasAim = _laserThrower.HitInfo;
-           _startedVisualization = true;
-           if (_hasAim)
-           {
-               StartCoroutine(LaserGrowing(_laserThrower.HitInfo.point));
-           }
-           else
-           {
-               StartCoroutine(LaserGrowing(_defaultPoint));
-           }
-       }
-       
-       if (!_laserThrower.IsTurnOn || _hasAim!= _laserThrower.HitInfo && _startedVisualization)
-       {
-           StopAllCoroutines();
-           _startedVisualization = false;
-           ResetRender();
-       }*/
-
-   }
+    private Transform _laserEdge;
 
 
-   private IEnumerator LaserGrowing(Vector3 LaserEdge)
-   {
-       Vector3 laserTip = _laserThrower.ShootPoint.position;
-       _lineRenderer.SetPosition(0,laserTip);
-       float lerpValue=0;
+    private void OnEnable()
+    {
+        _laserThrower.DrawCall += HandleLaserVisualization;
+        _laserThrower.DrawClean += ResetRender;
+    }
 
-       while (lerpValue < 1)
-       {
-           lerpValue += Time.deltaTime;
-           laserTip = Vector2.Lerp(_laserThrower.ShootPoint.position, LaserEdge, lerpValue);
-           _lineRenderer.SetPosition(1,laserTip);
-           yield return null;
-       }
-   }
+    private void OnDisable()
+    {
+        _laserThrower.DrawCall -= HandleLaserVisualization;
+        _laserThrower.DrawClean -= ResetRender;
+    }
 
-   private void ResetRender()
-   {
-       _lineRenderer.SetPosition(0, _laserThrower.ShootPoint.position);
-       _lineRenderer.SetPosition(1, _laserThrower.ShootPoint.position);
-   }
+
+    private void HandleLaserVisualization(Transform laserEdge)
+    {
+        _laserEdge = laserEdge;
+        ResetRender();
+        StartCoroutine(LaserGrowing(laserEdge.position));
+    }
+
+    private IEnumerator LaserGrowing(Vector3 LaserEdge)
+    {
+        var laserTip = _laserThrower.ShootPoint.position;
+        _lineRenderer.SetPosition(0, laserTip);
+        float lerpValue = 0;
+
+        while (lerpValue < 1)
+        {
+            lerpValue += Time.deltaTime + _speed;
+            laserTip = Vector2.Lerp(_laserThrower.ShootPoint.position, LaserEdge, lerpValue);
+            _lineRenderer.SetPosition(1, laserTip);
+            yield return null;
+        }
+
+        _laserThrower.Connect();
+        _laserThrower.IsFirstSideConnection = false;
+        StartCoroutine(LaserLengthControlling());
+    }
+
+    private IEnumerator LaserLengthControlling()
+    {
+        while (true)
+        {
+            _lineRenderer.SetPosition(1, _laserEdge.position);
+            yield return null;
+        }
+    }
+
+    private void ResetRender()
+    {
+        StopAllCoroutines();
+        _lineRenderer.SetPosition(0, _laserThrower.ShootPoint.position);
+        _lineRenderer.SetPosition(1, _laserThrower.ShootPoint.position);
+    }
 }

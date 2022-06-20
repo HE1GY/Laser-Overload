@@ -1,39 +1,54 @@
-﻿using UnityEngine;
+﻿#region
+
+using Unity.VisualScripting;
+using UnityEngine;
+
+#endregion
 
 namespace Grid.Elements
 {
-    public class LaserEnergyProvider:MonoBehaviour
+    public class LaserEnergyProvider : EnergyReceiver
     {
-        private const int ProvidedEnergy = 1;
-        [SerializeField] private LaserReceiver _laserReceiver;
         [SerializeField] private LaserThrower _laserThrower;
-        
-        private void OnEnable()
+
+        protected override void OnEnable()
         {
-            _laserReceiver.Connected += OnConnected;
-            _laserReceiver.LostConnection+=OnDisconnect;
+            base.OnEnable();
+            _laserThrower.ResetEnergy += OnResetEnergy;
+        }
+        
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            _laserThrower.ResetEnergy += OnResetEnergy;
         }
 
-        private void OnDisable()
-        {
-            _laserReceiver.Connected -= OnConnected;
-            _laserReceiver.LostConnection -= OnDisconnect;
-        }
-        
-        
-        private  void OnConnected()
-        {
-            _laserThrower.ReceivedEnergy += ProvidedEnergy;
-        }
 
-        private  void OnDisconnect()
+        private void OnResetEnergy()
         {
-            _laserThrower.ReceivedEnergy -= ProvidedEnergy;
-            if (!_laserThrower.IsTurnOn)
+            ReceivedEnergy = 0;
+        }
+        
+        protected override void AfterStartReceiving()
+        {
+            _laserThrower.ReceivedEnergy = ReceivedEnergy;
+            if (_laserThrower.IsTurnOn)
             {
-                _laserThrower.ResetConsumer();
+                _laserThrower.IsFirstSideConnection = true;
+                _laserThrower.CallDrawing();
             }
         }
-    }
 
+        protected override void AfterEndReceiving()
+        {
+            bool pastIsTurnOn = _laserThrower.IsTurnOn;
+            _laserThrower.ReceivedEnergy = ReceivedEnergy;
+            if (pastIsTurnOn!=_laserThrower.IsTurnOn)
+            {
+                _laserThrower.ResetConsumer();
+                _laserThrower.CallDrawing();
+            }
+        }
+        
+    }
 }

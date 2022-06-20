@@ -1,17 +1,19 @@
-﻿using System;
+﻿#region
+
 using Grid;
 using UnityEditor;
-using UnityEngine;
+
+#endregion
 
 namespace Editor
 {
     [CustomEditor(typeof(GridBuilderForBuild))]
-    public class GridBuilderForBuildEditor:UnityEditor.Editor
+    public class GridBuilderForBuildEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();
-            
+
             GridFieldEditor.DrawBuildButton();
         }
     }

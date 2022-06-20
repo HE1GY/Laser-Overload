@@ -1,12 +1,17 @@
-﻿using UnityEditor;
+﻿#region
+
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+#endregion
+
 namespace Grid
 {
-    public class ElementForBuild : Element, IPointerDownHandler
+    public class ElementForBuild : Element
     {
+        private const int RotationStep = 90;
         [SerializeField] private Sprite _laser;
         [SerializeField] private Sprite _battery;
         [SerializeField] private Sprite _platformTriangle90;
@@ -15,11 +20,9 @@ namespace Grid
         [SerializeField] private Sprite _laser3;
         [SerializeField] private Sprite _block;
         [SerializeField] private Sprite _star;
-        
+
 
         [Space(10)] [SerializeField] private Image _image;
-
-        private const int RotationStep = 90;
         private ElementType _elementType;
 
         public override ElementType ElementType
@@ -71,13 +74,9 @@ namespace Grid
         public override void OnPointerDown(PointerEventData eventData)
         {
             if (Input.GetMouseButton(0))
-            {
                 Selection.activeObject = gameObject;
-            }
             else
-            {
                 ElementType = ElementType.Empty;
-            }
         }
     }
 }

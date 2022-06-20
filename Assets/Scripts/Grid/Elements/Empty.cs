@@ -1,7 +1,7 @@
 ﻿namespace Grid
 {
-    public class Empty:Element
+    public class Empty : Element
     {
-        public override ElementType ElementType { get;  set; }
+        public override ElementType ElementType { get; set; }
     }
 }

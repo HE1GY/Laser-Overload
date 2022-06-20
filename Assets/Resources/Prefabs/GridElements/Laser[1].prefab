@@ -188,7 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e293116088f47488ad5e8bdcbc5b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultLaserLength: 2.5
   _lineRenderer: {fileID: 8000482962069733341}
   _laserThrower: {fileID: 1836162708897660415}
 --- !u!1 &8000482962069733343
@@ -492,6 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3b1ec4f5f84dc3af392bc7e424b984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _LaserThrower: {fileID: 1836162708897660415}
 --- !u!58 &1430689704785654088
 CircleCollider2D:
   m_ObjectHideFlags: 0
