@@ -28,7 +28,7 @@ namespace Editor
                     GUI.backgroundColor = Color.blue; 
                     if(GUILayout.Button("Load Grid",GUILayout.Height(50)))
                     {
-                        gridSerializer.Load();
+                        gridSerializer.Load(gridSerializer.Level);
                     }
                     
                 }

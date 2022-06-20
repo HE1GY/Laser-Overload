@@ -162,6 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2852221788827623058}
   - component: {fileID: 3759345923794178865}
+  - component: {fileID: 8140791854789973577}
   m_Layer: 0
   m_Name: Battery
   m_TagString: Untagged
@@ -203,8 +204,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 759887f5d03a4910b1f423fbadd4ade2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testMark: {fileID: 312720659}
+--- !u!114 &8140791854789973577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2874551021966165609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde1adda134d4a369acccec23f1d5bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _laserReceiver: {fileID: 4749583018504532968}
+  _testMark: {fileID: 312720659}
 --- !u!1 &6947084721240202889
 GameObject:
   m_ObjectHideFlags: 0

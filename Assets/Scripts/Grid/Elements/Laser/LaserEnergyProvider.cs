@@ -1,6 +1,5 @@
 ﻿#region
 
-using Unity.VisualScripting;
 using UnityEngine;
 
 #endregion
@@ -28,7 +27,7 @@ namespace Grid.Elements
         {
             ReceivedEnergy = 0;
         }
-        
+
         protected override void AfterStartReceiving()
         {
             _laserThrower.ReceivedEnergy = ReceivedEnergy;
@@ -41,14 +40,13 @@ namespace Grid.Elements
 
         protected override void AfterEndReceiving()
         {
-            bool pastIsTurnOn = _laserThrower.IsTurnOn;
+            var pastIsTurnOn = _laserThrower.IsTurnOn;
             _laserThrower.ReceivedEnergy = ReceivedEnergy;
-            if (pastIsTurnOn!=_laserThrower.IsTurnOn)
+            if (pastIsTurnOn != _laserThrower.IsTurnOn)
             {
                 _laserThrower.ResetConsumer();
                 _laserThrower.CallDrawing();
             }
         }
-        
     }
 }
