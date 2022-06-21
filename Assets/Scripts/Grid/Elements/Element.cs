@@ -1,13 +1,14 @@
 #region
 
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 #endregion
 
-public abstract class Element : MonoBehaviour, IPointerDownHandler
+public abstract class Element : MonoBehaviour
 {
     public abstract ElementType ElementType { set; get; }
+
+    public abstract IElementLogic ElementLogic { set; get; }
 
     public int StartRotation
     {
@@ -19,8 +20,8 @@ public abstract class Element : MonoBehaviour, IPointerDownHandler
         }
     }
 
-    public virtual void OnPointerDown(PointerEventData eventData)
+    public void Awake()
     {
-        StartRotation -= 90;
+        ElementLogic = GetComponent<IElementLogic>();
     }
 }

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace Grid
 {
-    public class ElementForBuild : Element
+    public class ElementForBuild : Element, IPointerDownHandler
     {
         private const int RotationStep = 90;
         [SerializeField] private Sprite _laser;
@@ -25,6 +25,8 @@ namespace Grid
         [Space(10)] [SerializeField] private Image _image;
         private ElementType _elementType;
 
+        public override IElementLogic ElementLogic { get; set; }
+
         public override ElementType ElementType
         {
             get => _elementType;
@@ -34,6 +36,15 @@ namespace Grid
                 OnElementChange();
             }
         }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            if (Input.GetMouseButton(0))
+                Selection.activeObject = gameObject;
+            else
+                ElementType = ElementType.Empty;
+        }
+
 
         public void Turn()
         {
@@ -62,21 +73,7 @@ namespace Grid
                 case ElementType.PlatformStick90:
                     _image.sprite = _platformStick90;
                     break;
-                case ElementType.Block:
-                    _image.sprite = _block;
-                    break;
-                case ElementType.Star:
-                    _image.sprite = _star;
-                    break;
             }
-        }
-
-        public override void OnPointerDown(PointerEventData eventData)
-        {
-            if (Input.GetMouseButton(0))
-                Selection.activeObject = gameObject;
-            else
-                ElementType = ElementType.Empty;
         }
     }
 }

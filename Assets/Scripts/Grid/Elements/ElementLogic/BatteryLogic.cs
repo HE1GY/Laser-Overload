@@ -7,20 +7,21 @@ using UnityEngine.UI;
 
 #endregion
 
-public class BatteryLogic : EnergyReceiver
+public class BatteryLogic : EnergyReceiver, ILevelCheckPoint
 {
     [SerializeField] private Image _testMark; //test
-    public bool IsCharged { get; private set; }
 
-    public event Action Chargered;
+    public event Action Passed;
+    public bool IsPassed { get; set; }
+
 
     protected override void AfterStartReceiving()
     {
         if (ReceivedEnergy > 0)
         {
-            IsCharged = true;
+            IsPassed = true;
             _testMark.enabled = true;
-            Chargered?.Invoke();
+            Passed?.Invoke();
         }
     }
 
@@ -28,7 +29,7 @@ public class BatteryLogic : EnergyReceiver
     {
         if (ReceivedEnergy == 0)
         {
-            IsCharged = false;
+            IsPassed = false;
             _testMark.enabled = false;
         }
     }

@@ -2,7 +2,6 @@
 
 using Grid.Elements;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 #endregion
@@ -16,6 +15,7 @@ namespace Grid
         [SerializeField] private Image _image;
         private int Energy;
         public override ElementType ElementType { get; set; } = ElementType.Star;
+        public override IElementLogic ElementLogic { get; set; }
 
 
         private void OnEnable()
@@ -29,11 +29,6 @@ namespace Grid
         {
             foreach (var laserReceiver in _laserReceiver) laserReceiver.Connected -= OnConnected;
             foreach (var laserReceiver in _laserReceiver) laserReceiver.LostConnection -= OnDisconnect;
-        }
-
-        public override void OnPointerDown(PointerEventData eventData)
-        {
-            //TODO
         }
 
 

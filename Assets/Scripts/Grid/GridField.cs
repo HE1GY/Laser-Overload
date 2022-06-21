@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class GridField : MonoBehaviour
 {
     [SerializeField] private GridLayoutGroup _gridLayoutGroup;
+    private readonly Type DefaultBuilder = typeof(GridBuilderForGame);
     private GridBuilder _gridBuilder;
 
     private GridData _gridData;
@@ -38,10 +39,7 @@ public class GridField : MonoBehaviour
     public void Build()
     {
         DeleteAllElement();
-        if (!_gridBuilder)
-        {
-            ChooseBuilder(typeof(GridBuilderForGame));
-        }
+        if (!_gridBuilder) ChooseBuilder(DefaultBuilder);
         _gridElements = _gridBuilder.BuildGrid(ref _gridData);
         GridLayoutConfiguration();
         GridBuilt?.Invoke(_gridElements);

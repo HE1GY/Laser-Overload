@@ -8,10 +8,11 @@ using UnityEngine.EventSystems;
 
 namespace Grid
 {
-    public class Laser : Element
+    public class Laser : Element, IPointerDownHandler
     {
         [SerializeField] private LaserThrower _LaserThrower;
         public override ElementType ElementType { get; set; } = ElementType.Laser;
+        public override IElementLogic ElementLogic { get; set; }
 
 
         private void Start()
@@ -20,9 +21,9 @@ namespace Grid
         }
 
 
-        public override void OnPointerDown(PointerEventData eventData)
+        public void OnPointerDown(PointerEventData eventData)
         {
-            base.OnPointerDown(eventData);
+            StartRotation -= 90;
             _LaserThrower.CallDrawing();
             _LaserThrower.ResetConsumer();
         }
