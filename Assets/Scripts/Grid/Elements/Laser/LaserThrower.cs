@@ -32,7 +32,7 @@ namespace Grid.Elements
 
         public Transform ShootPoint => _shootPoints;
 
-        private void Awake()
+        private void Start()
         {
             var gm = new GameObject();
             _laserEdge = gm.transform;

@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class LaserVisualization : MonoBehaviour
 {
-    private const float _speed = 0.007f;
+    private const float _speed = 0.014f;
 
     [SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] private LaserThrower _laserThrower;

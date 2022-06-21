@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 759887f5d03a4910b1f423fbadd4ade2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BatteryLogic: {fileID: 8140791854789973577}
 --- !u!114 &8140791854789973577
 MonoBehaviour:
   m_ObjectHideFlags: 0
