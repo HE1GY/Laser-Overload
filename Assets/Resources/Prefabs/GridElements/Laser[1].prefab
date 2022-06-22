@@ -448,8 +448,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5510678416797728883}
-  - component: {fileID: 8715131736613504919}
   - component: {fileID: 1430689704785654088}
+  - component: {fileID: 8715131736613504919}
+  - component: {fileID: 5916692987631413629}
   m_Layer: 0
   m_Name: Laser[1]
   m_TagString: Untagged
@@ -479,19 +480,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1.58, y: 3.55}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8715131736613504919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8000482963424749973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad3b1ec4f5f84dc3af392bc7e424b984, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _LaserThrower: {fileID: 1836162708897660415}
 --- !u!58 &1430689704785654088
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -508,3 +496,30 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 50
+--- !u!114 &8715131736613504919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8000482963424749973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3b1ec4f5f84dc3af392bc7e424b984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5916692987631413629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8000482963424749973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de2c892042d46188f20db750f34b10c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotatableElement: {fileID: 8715131736613504919}
+  _LaserThrowers:
+  - {fileID: 1836162708897660415}

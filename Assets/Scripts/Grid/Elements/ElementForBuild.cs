@@ -39,10 +39,12 @@ namespace Grid
 
         public void OnPointerDown(PointerEventData eventData)
         {
+#if UNITY_EDITOR
             if (Input.GetMouseButton(0))
                 Selection.activeObject = gameObject;
             else
                 ElementType = ElementType.Empty;
+#endif
         }
 
 
@@ -72,6 +74,12 @@ namespace Grid
                     break;
                 case ElementType.PlatformStick90:
                     _image.sprite = _platformStick90;
+                    break;
+                case ElementType.Star:
+                    _image.sprite = _star;
+                    break;
+                case ElementType.Block:
+                    _image.sprite = _block;
                     break;
             }
         }

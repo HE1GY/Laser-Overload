@@ -36,6 +36,8 @@ namespace Grid.Elements
         {
             var gm = new GameObject();
             _laserEdge = gm.transform;
+            gm.hideFlags = HideFlags.HideInHierarchy;
+            CallDrawing();
         }
 
         private void Update()
