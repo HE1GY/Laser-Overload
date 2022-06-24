@@ -12,14 +12,16 @@ namespace Grid
     public class ElementForBuild : Element, IPointerDownHandler
     {
         private const int RotationStep = 90;
-        [SerializeField] private Sprite _laser;
-        [SerializeField] private Sprite _battery;
-        [SerializeField] private Sprite _platformTriangle90;
-        [SerializeField] private Sprite _platformStick90;
-        [SerializeField] private Sprite _empty;
-        [SerializeField] private Sprite _laser3;
-        [SerializeField] private Sprite _block;
-        [SerializeField] private Sprite _star;
+
+        public Sprite _laser;
+        public Sprite _battery;
+        public Sprite _platformTriangle90;
+        public Sprite _platformStick90;
+        public Sprite _empty;
+        public Sprite _laser3;
+        public Sprite _block;
+        public Sprite _star;
+        public Sprite _teleport;
 
 
         [Space(10)] [SerializeField] private Image _image;
@@ -80,6 +82,9 @@ namespace Grid
                     break;
                 case ElementType.Block:
                     _image.sprite = _block;
+                    break;
+                case ElementType.Teleport:
+                    _image.sprite = _teleport;
                     break;
             }
         }

@@ -236,7 +236,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c403c5912b47f684c90f648afc7bbd2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -268,7 +268,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.06829262
+        value: 0.5067539
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -464,8 +464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ece6ea531bd4a308414e3dbe2e5c83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _LaserThrower: {fileID: 8209959488034864809}
-  _LaserThrower2: {fileID: 8209959486290291123}
 --- !u!114 &681136467011344979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,7 +732,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c403c5912b47f684c90f648afc7bbd2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -766,7 +764,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.06829262
+        value: 0.5067539
         inSlope: 0
         outSlope: 0
         tangentMode: 0

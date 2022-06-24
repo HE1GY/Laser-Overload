@@ -7,5 +7,6 @@ public enum ElementType
     Battery,
     Laser3,
     Block,
-    Star
+    Star,
+    Teleport
 }

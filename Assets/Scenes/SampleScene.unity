@@ -648,7 +648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8062bb885ed5e4aa7da5279544a339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AutoLoad: 1
+  _AutoLoad: 0
   _gridSerializer: {fileID: 142051380}
   _gridField: {fileID: 142051381}
 --- !u!4 &1343173847

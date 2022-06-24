@@ -1,12 +1,22 @@
-﻿using UnityEngine;
+﻿#region
+
+using UnityEngine;
+
+#endregion
 
 namespace Grid.Elements
 {
     public abstract class EnergyReceiver : MonoBehaviour
     {
         [SerializeField] private LaserReceiver _laserReceiver;
-        private int _energyStep = 1;
+        private readonly int _energyStep = 1;
         protected int ReceivedEnergy;
+
+        public LaserReceiver LaserReceiver
+        {
+            get => _laserReceiver;
+            set => _laserReceiver = value;
+        }
 
         protected virtual void OnEnable()
         {
