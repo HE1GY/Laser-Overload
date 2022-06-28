@@ -3,12 +3,18 @@ using UnityEngine.EventSystems;
 
 namespace Grid
 {
-    public class DirectionSwitcherLogic : MonoBehaviour, IElementLogic,IPointerDownHandler
+    public class DirectionSwitcherLogic : MonoBehaviour, IPointerDownHandler, IElementLogic
     {
         [SerializeField] private Element _directinSwitcher;
-        public void OnPointerDown(PointerEventData eventData)
+        
+        protected void OnClick()
         {
             _directinSwitcher.StartRotation -= 90;
+        }
+
+        public virtual void OnPointerDown(PointerEventData eventData)
+        {
+            OnClick();
         }
     }
 }

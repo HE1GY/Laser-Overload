@@ -273,10 +273,10 @@ GameObject:
   - component: {fileID: 6806566472010876125}
   - component: {fileID: 8134572073947587494}
   - component: {fileID: 8134572073947587493}
-  - component: {fileID: 8134572073947587496}
-  - component: {fileID: -2125172258866295925}
+  - component: {fileID: 8134572073947587495}
+  - component: {fileID: -245920969057858076}
   m_Layer: 0
-  m_Name: DirectionSwitcher
+  m_Name: DirectionSwitcherRepeater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8134572073947587496
+--- !u!114 &8134572073947587495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -352,10 +352,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6774711617738136614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b0a3eaf5cd4836ad9e234a34379497, type: 3}
+  m_Script: {fileID: 11500000, guid: ea96cf5a576341fbbd7fffbd10c8e176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2125172258866295925
+  _directinSwitcher: {fileID: -245920969057858076}
+--- !u!114 &-245920969057858076
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -364,10 +365,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6774711617738136614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b80f3f22ba4d492797674331969e5ef2, type: 3}
+  m_Script: {fileID: 11500000, guid: d11fc1309622449ea94dd62430b45b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _directinSwitcher: {fileID: 8134572073947587496}
 --- !u!1 &7510879170599771073
 GameObject:
   m_ObjectHideFlags: 0

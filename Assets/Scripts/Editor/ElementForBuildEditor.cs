@@ -30,6 +30,18 @@ namespace Editor
                 elementForBuild.ElementType = ElementType.Laser3;
             GUILayout.EndHorizontal();
 
+            GUILayout.BeginHorizontal();
+
+            GUI.backgroundColor = Color.yellow;
+            if (GUILayout.Button(elementForBuild._laserRepeater.texture, GUILayout.Height(50), GUILayout.Width(100)))
+                elementForBuild.ElementType = ElementType.LaserRepeater;
+
+            GUI.backgroundColor = Color.cyan;
+            if (GUILayout.Button(elementForBuild._laser3Repeater.texture, GUILayout.Height(50), GUILayout.Width(100)))
+                elementForBuild.ElementType = ElementType.Laser3Repeater;
+
+            GUILayout.EndHorizontal();
+
             #endregion
 
             GUILayout.Space(20);
@@ -38,20 +50,40 @@ namespace Editor
 
             GUILayout.BeginHorizontal();
             GUI.backgroundColor = Color.blue;
-            if (GUILayout.Button(elementForBuild._platformTriangle90.texture, GUILayout.Height(50),GUILayout.Width(100)))
+            if (GUILayout.Button(elementForBuild._platformTriangle90.texture, GUILayout.Height(50),
+                    GUILayout.Width(100)))
                 elementForBuild.ElementType = ElementType.PlatformTriangle90;
 
             GUI.backgroundColor = Color.magenta;
-            if (GUILayout.Button(elementForBuild._platformStick90.texture, GUILayout.Height(50),GUILayout.Width(100)))
+            if (GUILayout.Button(elementForBuild._platformStick90.texture, GUILayout.Height(50), GUILayout.Width(100)))
                 elementForBuild.ElementType = ElementType.PlatformStick90;
 
             GUI.backgroundColor = Color.yellow;
-            if (GUILayout.Button(elementForBuild._directionSwitcher.texture, GUILayout.Height(50),GUILayout.Width(100)))
+            if (GUILayout.Button(elementForBuild._directionSwitcher.texture, GUILayout.Height(50),
+                    GUILayout.Width(100)))
                 elementForBuild.ElementType = ElementType.DirectionSwitcher;
-            
+
             GUI.backgroundColor = Color.yellow;
-            if (GUILayout.Button(elementForBuild._teleport.texture, GUILayout.Height(50),GUILayout.Width(100)))
+            if (GUILayout.Button(elementForBuild._teleport.texture, GUILayout.Height(50), GUILayout.Width(100)))
                 elementForBuild.ElementType = ElementType.Teleport;
+
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            GUI.backgroundColor = Color.blue;
+            if (GUILayout.Button(elementForBuild._platformTriangle90Repeater.texture, GUILayout.Height(50),
+                    GUILayout.Width(100)))
+                elementForBuild.ElementType = ElementType.PlatformTriangle90Repeater;
+
+            GUI.backgroundColor = Color.magenta;
+            if (GUILayout.Button(elementForBuild._platformStick90Repeater.texture, GUILayout.Height(50),
+                    GUILayout.Width(100)))
+                elementForBuild.ElementType = ElementType.PlatformStick90Repeater;
+
+            GUI.backgroundColor = Color.yellow;
+            if (GUILayout.Button(elementForBuild._directionSwitcherRepeater.texture, GUILayout.Height(50),
+                    GUILayout.Width(100)))
+                elementForBuild.ElementType = ElementType.DirectionSwitcherRepeater;
 
             GUILayout.EndHorizontal();
 
@@ -73,7 +105,7 @@ namespace Editor
             GUI.backgroundColor = Color.cyan;
             if (GUILayout.Button(elementForBuild._star.texture, GUILayout.Height(50), GUILayout.Width(100)))
                 elementForBuild.ElementType = ElementType.Star;
-            
+
 
             GUILayout.EndHorizontal();
 

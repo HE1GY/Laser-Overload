@@ -20,14 +20,26 @@ namespace Grid
         private const string TeleportName = "Teleport";
         private const string DirectionSwitcherName = "DirectionSwitcher";
 
+        private const string Laser1RepeaterName = "Laser[1]Repeater";
+        private const string Laser3RepeaterName = "Laser[3]Repeater";
+        private const string PlatformTriangle90RepeaterName = "Platform[Triangle90]Repeater";
+        private const string PlatformStick90RepeaterName = "Platform[Stick90]Repeater";
+        private const string DirectionSwitcherRepeaterName = "DirectionSwitcherRepeater";
+
         private Battery _battery;
         private Block _block;
         private DirectionSwitcher _DirectionSwitcher;
+        private DirectionSwitcherRepeater _DirectionSwitcherRepeater;
         private Empty _empty;
         private Laser _laser;
         private Laser3 _laser3;
+        private Laser3Repeater _laser3Repeater;
+
+        private LaserRepeater _laserRepeater;
         private PlatformStick90 _platformStick90;
+        private PlatformStick90Repeater _platformStick90Repeater;
         private PlatformTriangle90 _platformTriangle90;
+        private PlatformTriangle90Repeater _platformTriangle90Repeater;
         private Star _star;
         private Teleport _teleport;
 
@@ -85,6 +97,27 @@ namespace Grid
                         gridElements[i] = Instantiate(_DirectionSwitcher, Vector2.zero,
                             Quaternion.Euler(0, 0, gridData.StartRotations[i]), transform);
                         break;
+
+                    case ElementType.LaserRepeater:
+                        gridElements[i] = Instantiate(_laserRepeater, Vector2.zero,
+                            Quaternion.Euler(0, 0, gridData.StartRotations[i]), transform);
+                        break;
+                    case ElementType.Laser3Repeater:
+                        gridElements[i] = Instantiate(_laser3Repeater, Vector2.zero,
+                            Quaternion.Euler(0, 0, gridData.StartRotations[i]), transform);
+                        break;
+                    case ElementType.PlatformStick90Repeater:
+                        gridElements[i] = Instantiate(_platformStick90Repeater, Vector2.zero,
+                            Quaternion.Euler(0, 0, gridData.StartRotations[i]), transform);
+                        break;
+                    case ElementType.PlatformTriangle90Repeater:
+                        gridElements[i] = Instantiate(_platformTriangle90Repeater, Vector2.zero,
+                            Quaternion.Euler(0, 0, gridData.StartRotations[i]), transform);
+                        break;
+                    case ElementType.DirectionSwitcherRepeater:
+                        gridElements[i] = Instantiate(_DirectionSwitcherRepeater, Vector2.zero,
+                            Quaternion.Euler(0, 0, gridData.StartRotations[i]), transform);
+                        break;
                 }
 
             return gridElements;
@@ -124,6 +157,12 @@ namespace Grid
             _star = LoadGridElement(StarName) as Star;
             _teleport = LoadGridElement(TeleportName) as Teleport;
             _DirectionSwitcher = LoadGridElement(DirectionSwitcherName) as DirectionSwitcher;
+
+            _laserRepeater = LoadGridElement(Laser1RepeaterName) as LaserRepeater;
+            _laser3Repeater = LoadGridElement(Laser3RepeaterName) as Laser3Repeater;
+            _platformStick90Repeater = LoadGridElement(PlatformStick90RepeaterName) as PlatformStick90Repeater;
+            _platformTriangle90Repeater = LoadGridElement(PlatformTriangle90RepeaterName) as PlatformTriangle90Repeater;
+            _DirectionSwitcherRepeater = LoadGridElement(DirectionSwitcherRepeaterName) as DirectionSwitcherRepeater;
         }
     }
 }

@@ -23,6 +23,11 @@ namespace Grid
         public Sprite _star;
         public Sprite _teleport;
         public Sprite _directionSwitcher;
+        public Sprite _laserRepeater;
+        public Sprite _laser3Repeater;
+        public Sprite _platformTriangle90Repeater;
+        public Sprite _platformStick90Repeater;
+        public Sprite _directionSwitcherRepeater;
 
 
         [Space(10)] [SerializeField] private Image _image;
@@ -89,6 +94,21 @@ namespace Grid
                     break;
                 case ElementType.DirectionSwitcher:
                     _image.sprite = _directionSwitcher;
+                    break;
+                case ElementType.LaserRepeater:
+                    _image.sprite = _laserRepeater;
+                    break;
+                case ElementType.Laser3Repeater:
+                    _image.sprite = _laser3Repeater;
+                    break;
+                case ElementType.PlatformTriangle90Repeater:
+                    _image.sprite = _platformTriangle90Repeater;
+                    break;
+                case ElementType.PlatformStick90Repeater:
+                    _image.sprite = _platformStick90Repeater;
+                    break;
+                case ElementType.DirectionSwitcherRepeater:
+                    _image.sprite = _directionSwitcherRepeater;
                     break;
             }
         }

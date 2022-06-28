@@ -9,5 +9,10 @@ public enum ElementType
     Block,
     Star,
     Teleport,
-    DirectionSwitcher
+    DirectionSwitcher,
+    LaserRepeater,
+    Laser3Repeater,
+    PlatformStick90Repeater,
+    PlatformTriangle90Repeater,
+    DirectionSwitcherRepeater
 }

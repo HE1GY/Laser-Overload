@@ -69,6 +69,11 @@ MonoBehaviour:
   _star: {fileID: 21300000, guid: ad1bd42ecf2f9874b81d77ca61aa818f, type: 3}
   _teleport: {fileID: 21300000, guid: 30a09153d5f733248b01c32f5c285bb3, type: 3}
   _directionSwitcher: {fileID: 21300000, guid: 0be931b8076d70e48a1acb2525de17b2, type: 3}
+  _laserRepeater: {fileID: 21300000, guid: 7d765faa108a99941b32d66651c65fdb, type: 3}
+  _laser3Repeater: {fileID: 21300000, guid: 3a56a0f8a92944c4cad0544b25572ad3, type: 3}
+  _platformTriangle90Repeater: {fileID: 21300000, guid: efdfd4a084e87954cbf1128088e0823f, type: 3}
+  _platformStick90Repeater: {fileID: 21300000, guid: 8654c4235bfb6e149815a28b6afbe182, type: 3}
+  _directionSwitcherRepeater: {fileID: 21300000, guid: 99138d66fe070dd4b8baccb8dc6d644e, type: 3}
   _image: {fileID: 767089104183415617}
 --- !u!114 &767089104183415617
 MonoBehaviour:
