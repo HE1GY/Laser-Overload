@@ -51,11 +51,13 @@ namespace Grid.Elements
             _raycastHit2D = Physics2D.Raycast(_shootPoints.position, _shootPoints.right);
             if (_raycastHit2D)
             {
-                _connectedPort = _raycastHit2D.collider;
                 _laserEdge.position = _raycastHit2D.point;
                 if (_raycastHit2D.collider.gameObject.TryGetComponent(out LaserReceiver laserReceiver))
                     if (laserReceiver != _connectedConsumer)
                     {
+                        ResetConsumer();
+                        
+                        _connectedPort = _raycastHit2D.collider;
                         _connectedConsumer = laserReceiver;
                         if (!IsFirstSideConnection) Connect();
                     }

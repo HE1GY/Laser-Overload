@@ -18,10 +18,12 @@ namespace Grid
         private const string BlockName = "Block";
         private const string StarName = "Star";
         private const string TeleportName = "Teleport";
+        private const string DirectionSwitcherName = "DirectionSwitcher";
+
         private Battery _battery;
         private Block _block;
+        private DirectionSwitcher _DirectionSwitcher;
         private Empty _empty;
-
         private Laser _laser;
         private Laser3 _laser3;
         private PlatformStick90 _platformStick90;
@@ -77,14 +79,18 @@ namespace Grid
                     case ElementType.Teleport:
                         gridElements[i] = Instantiate(_teleport, Vector2.zero,
                             Quaternion.Euler(0, 0, gridData.StartRotations[i]), transform);
-                        InitializeTeleport(gridElements, i);
+                        InitializeTeleports(gridElements, i);
+                        break;
+                    case ElementType.DirectionSwitcher:
+                        gridElements[i] = Instantiate(_DirectionSwitcher, Vector2.zero,
+                            Quaternion.Euler(0, 0, gridData.StartRotations[i]), transform);
                         break;
                 }
 
             return gridElements;
         }
 
-        private void InitializeTeleport(Element[] gridElements, int i)
+        private void InitializeTeleports(Element[] gridElements, int i)
         {
             if (!_tp1)
             {
@@ -101,6 +107,8 @@ namespace Grid
                 tp2L.SetLaserReceiversToLaser(tp1L.LaserReceivers);
                 tp1L.gameObject.SetActive(true);
                 tp2L.gameObject.SetActive(true);
+                _tp1 = null;
+                _tp2 = null;
             }
         }
 
@@ -115,6 +123,7 @@ namespace Grid
             _block = LoadGridElement(BlockName) as Block;
             _star = LoadGridElement(StarName) as Star;
             _teleport = LoadGridElement(TeleportName) as Teleport;
+            _DirectionSwitcher = LoadGridElement(DirectionSwitcherName) as DirectionSwitcher;
         }
     }
 }

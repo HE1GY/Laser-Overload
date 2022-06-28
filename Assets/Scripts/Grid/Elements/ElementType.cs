@@ -8,5 +8,6 @@ public enum ElementType
     Laser3,
     Block,
     Star,
-    Teleport
+    Teleport,
+    DirectionSwitcher
 }

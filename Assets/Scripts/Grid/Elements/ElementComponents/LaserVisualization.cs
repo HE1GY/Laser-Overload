@@ -33,10 +33,10 @@ public class LaserVisualization : MonoBehaviour
     {
         _laserEdge = laserEdge;
         ResetRender();
-        StartCoroutine(LaserGrowing(laserEdge.position));
+        StartCoroutine(LaserGrowing());
     }
 
-    private IEnumerator LaserGrowing(Vector3 LaserEdge)
+    private IEnumerator LaserGrowing()
     {
         var laserTip = _laserThrower.ShootPoint.position;
         _lineRenderer.SetPosition(0, laserTip);
@@ -45,7 +45,7 @@ public class LaserVisualization : MonoBehaviour
         while (lerpValue < 1)
         {
             lerpValue += Time.deltaTime + _speed;
-            laserTip = Vector2.Lerp(_laserThrower.ShootPoint.position, LaserEdge, lerpValue);
+            laserTip = Vector2.Lerp(_laserThrower.ShootPoint.position, _laserEdge.position, lerpValue);
             _lineRenderer.SetPosition(1, laserTip);
             yield return null;
         }

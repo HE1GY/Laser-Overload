@@ -22,6 +22,7 @@ namespace Grid
         public Sprite _block;
         public Sprite _star;
         public Sprite _teleport;
+        public Sprite _directionSwitcher;
 
 
         [Space(10)] [SerializeField] private Image _image;
@@ -85,6 +86,9 @@ namespace Grid
                     break;
                 case ElementType.Teleport:
                     _image.sprite = _teleport;
+                    break;
+                case ElementType.DirectionSwitcher:
+                    _image.sprite = _directionSwitcher;
                     break;
             }
         }
