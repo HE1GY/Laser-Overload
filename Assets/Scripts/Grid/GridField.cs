@@ -1,19 +1,25 @@
+#region
+
 using System;
 using Grid;
 using UnityEngine;
 using UnityEngine.UI;
 
+#endregion
+
 public class GridField : MonoBehaviour
 {
-    [SerializeField]private GridLayoutGroup _gridLayout;
-    
-    private GridData _gridData;
+    [SerializeField] private GridLayoutGroup _gridLayoutGroup;
+    private readonly Type DefaultBuilder = typeof(GridBuilderForGame);
     private GridBuilder _gridBuilder;
+
+    private GridData _gridData;
     private Element[] _gridElements;
+    public event Action<Element[]> GridBuilt;
 
     public GridData GetData()
     {
-        _gridData.ExtractElementsData(_gridElements); 
+        _gridData.ExtractElementsData(_gridElements);
         return _gridData;
     }
 
@@ -22,31 +28,31 @@ public class GridField : MonoBehaviour
         _gridData = gridData;
         Build();
     }
-    
+
     public void ChooseBuilder(Type typeOfBuilder)
     {
         Destroy(_gridBuilder);
-        _gridBuilder=gameObject.AddComponent(typeOfBuilder) as GridBuilder;
+        _gridBuilder = gameObject.AddComponent(typeOfBuilder) as GridBuilder;
     }
+
 
     public void Build()
     {
         DeleteAllElement();
-        _gridElements=_gridBuilder.BuildGrid(ref _gridData);
+        if (!_gridBuilder) ChooseBuilder(DefaultBuilder);
+        _gridElements = _gridBuilder.BuildGrid(ref _gridData);
         GridLayoutConfiguration();
+        GridBuilt?.Invoke(_gridElements);
     }
 
     private void GridLayoutConfiguration()
     {
-        _gridLayout.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
-        _gridLayout.constraintCount = _gridData.Columns;
+        _gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+        _gridLayoutGroup.constraintCount = _gridData.Columns;
     }
 
     private void DeleteAllElement()
     {
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            Destroy(transform.GetChild(i).gameObject);
-        }
+        for (var i = 0; i < transform.childCount; i++) Destroy(transform.GetChild(i).gameObject);
     }
 }

@@ -236,7 +236,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c403c5912b47f684c90f648afc7bbd2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -268,7 +268,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.06829262
+        value: 0.5067539
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -391,8 +391,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3585111562376170461}
-  - component: {fileID: 6354131026068765294}
   - component: {fileID: 5722844324379631376}
+  - component: {fileID: 6354131026068765294}
+  - component: {fileID: 681136467011344979}
   m_Layer: 0
   m_Name: Platform[Triangle90]
   m_TagString: Untagged
@@ -423,20 +424,6 @@ RectTransform:
   m_AnchoredPosition: {x: -961.479, y: -541.5513}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6354131026068765294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8209959487004091669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ece6ea531bd4a308414e3dbe2e5c83d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _LaserThrower: {fileID: 8209959488034864809}
-  _LaserThrower2: {fileID: 8209959486290291123}
 --- !u!68 &5722844324379631376
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -465,6 +452,34 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &6354131026068765294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209959487004091669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ece6ea531bd4a308414e3dbe2e5c83d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &681136467011344979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209959487004091669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de2c892042d46188f20db750f34b10c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotatableElement: {fileID: 6354131026068765294}
+  _LaserThrowers:
+  - {fileID: 8209959488034864809}
+  - {fileID: 8209959486290291123}
 --- !u!1 &8209959487172437625
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +732,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c403c5912b47f684c90f648afc7bbd2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -749,7 +764,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.06829262
+        value: 0.5067539
         inSlope: 0
         outSlope: 0
         tangentMode: 0

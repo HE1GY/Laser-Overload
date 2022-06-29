@@ -7,5 +7,12 @@ public enum ElementType
     Battery,
     Laser3,
     Block,
-    Star
+    Star,
+    Teleport,
+    DirectionSwitcher,
+    LaserRepeater,
+    Laser3Repeater,
+    PlatformStick90Repeater,
+    PlatformTriangle90Repeater,
+    DirectionSwitcherRepeater
 }
